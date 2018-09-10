@@ -1,0 +1,203 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0096fab9, pid=444, tid=3992
+#
+# JRE version: 6.0_29-b11
+# Java VM: Java HotSpot(TM) Client VM (20.4-b02 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# j  java.awt.MenuBar.getMenuCountImpl()I+0
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x02bf6c00):  JavaThread "AWT-Windows" daemon [_thread_in_Java, id=3992, stack(0x02ff0000,0x03040000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x6176616a
+
+Registers:
+EAX=0x70000000, EBX=0x00000030, ECX=0x6176616a, EDX=0x0000001c
+ESP=0x0303de78, EBP=0x0303de98, ESI=0x36c8ce71, EDI=0x0303dea0
+EIP=0x0096fab9, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x0303de78)
+0x0303de78:   0303de78 36c8ce70 0303dea0 3785a128
+0x0303de88:   00000000 3785ac50 00000000 0303dea0
+0x0303de98:   0303debc 00960364 6176616a 0303decc
+0x0303dea8:   6d8ea50e 00001fa0 009602ff 02bf6c00
+0x0303deb8:   3785ac50 0303df34 6d8eac3b 0303def0
+0x0303dec8:   0303e08c 0000000a 3785ac50 00969280
+0x0303ded8:   0303dfbc 00000001 02bf6c00 02bf3de0
+0x0303dee8:   02bf6c00 0303e084 02bf6c00 036c5a88 
+
+Instructions: (pc=0x0096fab9)
+0x0096fa99:   0f 85 21 08 ff ff 8b 75 e4 8b 7d e8 c3 0f b7 56
+0x0096faa9:   01 8b 4d ec c1 e2 02 8b 5c 91 1c 8b 44 91 20 59
+0x0096fab9:   3b 01 c1 e8 1c 83 e0 0f 0f 85 0a 00 00 00 0f be
+0x0096fac9:   04 19 50 e9 a1 00 00 00 83 f8 03 0f 85 09 00 00 
+
+
+Register to memory mapping:
+
+EAX=0x70000000 is an unknown value
+EBX=0x00000030 is an unknown value
+ECX=0x6176616a is an unknown value
+EDX=0x0000001c is an unknown value
+ESP=0x0303de78 is pointing into the stack for thread: 0x02bf6c00
+EBP=0x0303de98 is pointing into the stack for thread: 0x02bf6c00
+ESI=0x36c8ce71 is an oop
+{constMethod} 
+ - klass: {other class}
+ - method:       0x3785ac50 {method} 'getMenuCountImpl' '()I' in 'java/awt/MenuBar'
+ - exceptions:   0x369e0068
+bci_from(36C8CE71) = 1; print_codes():
+EDI=0x0303dea0 is pointing into the stack for thread: 0x02bf6c00
+
+
+Stack: [0x02ff0000,0x03040000],  sp=0x0303de78,  free space=311k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+j  java.awt.MenuBar.getMenuCountImpl()I+0
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xfac3b]
+V  [jvm.dll+0x18c391]
+V  [jvm.dll+0xfacbd]
+V  [jvm.dll+0x95981]
+V  [jvm.dll+0x9784c]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x036cdc00 JavaThread "Thread-1" daemon [_thread_in_native, id=2916, stack(0x0dd90000,0x0dde0000)]
+  0x036cc800 JavaThread "Image Fetcher 2" daemon [_thread_blocked, id=2788, stack(0x0e8e0000,0x0e930000)]
+  0x036cb000 JavaThread "Image Fetcher 1" daemon [_thread_blocked, id=3656, stack(0x0e890000,0x0e8e0000)]
+  0x00846800 JavaThread "DestroyJavaVM" [_thread_blocked, id=3588, stack(0x008e0000,0x00930000)]
+  0x036c6400 JavaThread "Java Sound Sequencer" [_thread_blocked, id=3872, stack(0x0e7f0000,0x0e840000)]
+  0x036c3400 JavaThread "Headspace mixer frame proc thread" daemon [_thread_blocked, id=4048, stack(0x0e150000,0x0e1a0000)]
+  0x036c0800 JavaThread "Java Sound Event Dispatcher" daemon [_thread_blocked, id=2528, stack(0x0e100000,0x0e150000)]
+  0x036c0400 JavaThread "Java Sound Event Dispatcher" daemon [_thread_blocked, id=1224, stack(0x0e0b0000,0x0e100000)]
+  0x0361c400 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=2952, stack(0x03800000,0x03850000)]
+=>0x02bf6c00 JavaThread "AWT-Windows" daemon [_thread_in_Java, id=3992, stack(0x02ff0000,0x03040000)]
+  0x02bf5c00 JavaThread "AWT-Shutdown" [_thread_blocked, id=3624, stack(0x02fa0000,0x02ff0000)]
+  0x02bf3000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=2044, stack(0x02f50000,0x02fa0000)]
+  0x02ba9c00 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=1136, stack(0x02e20000,0x02e70000)]
+  0x02ba3000 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=808, stack(0x02dd0000,0x02e20000)]
+  0x02ba1800 JavaThread "Attach Listener" daemon [_thread_blocked, id=576, stack(0x02d80000,0x02dd0000)]
+  0x02bc1400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4064, stack(0x02d30000,0x02d80000)]
+  0x02b9b400 JavaThread "Finalizer" daemon [_thread_blocked, id=456, stack(0x02ce0000,0x02d30000)]
+  0x02b96800 JavaThread "Reference Handler" daemon [_thread_blocked, id=2668, stack(0x02c90000,0x02ce0000)]
+
+Other Threads:
+  0x02b5a800 VMThread [stack: 0x02c40000,0x02c90000] [id=656]
+  0x02bc0c00 WatcherThread [stack: 0x02e70000,0x02ec0000] [id=3988]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4928K, used 2884K [0x229e0000, 0x22f30000, 0x27f30000)
+  eden space 4416K,  53% used [0x229e0000, 0x22c31360, 0x22e30000)
+  from space 512K, 100% used [0x22eb0000, 0x22f30000, 0x22f30000)
+  to   space 512K,   0% used [0x22e30000, 0x22e30000, 0x22eb0000)
+ tenured generation   total 10944K, used 1121K [0x27f30000, 0x289e0000, 0x329e0000)
+   the space 10944K,  10% used [0x27f30000, 0x28048570, 0x28048600, 0x289e0000)
+ compacting perm gen  total 12288K, used 1008K [0x329e0000, 0x335e0000, 0x369e0000)
+   the space 12288K,   8% used [0x329e0000, 0x32adc108, 0x32adc200, 0x335e0000)
+    ro space 10240K,  51% used [0x369e0000, 0x36f0d0b8, 0x36f0d200, 0x373e0000)
+    rw space 12288K,  54% used [0x373e0000, 0x37a79570, 0x37a79600, 0x37fe0000)
+
+Code Cache  [0x00960000, 0x00a30000, 0x02960000)
+ total_blobs=476 nmethods=259 adapters=153 free_code_cache=32715840 largest_free_block=0
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Program Files\Java\jre6\bin\javaw.exe
+0x7c920000 - 0x7c9b6000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c91e000 	C:\WINDOWS\system32\kernel32.dll
+0x77da0000 - 0x77e49000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e50000 - 0x77ee3000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77fc0000 - 0x77fd1000 	C:\WINDOWS\system32\Secur32.dll
+0x77d10000 - 0x77da0000 	C:\WINDOWS\system32\USER32.dll
+0x77ef0000 - 0x77f39000 	C:\WINDOWS\system32\GDI32.dll
+0x76300000 - 0x7631d000 	C:\WINDOWS\system32\IMM32.DLL
+0x62c20000 - 0x62c29000 	C:\WINDOWS\system32\LPK.DLL
+0x73fa0000 - 0x7400b000 	C:\WINDOWS\system32\USP10.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jre6\bin\msvcr71.dll
+0x6d7f0000 - 0x6da9f000 	C:\Program Files\Java\jre6\bin\client\jvm.dll
+0x76b10000 - 0x76b3a000 	C:\WINDOWS\system32\WINMM.dll
+0x6d7a0000 - 0x6d7ac000 	C:\Program Files\Java\jre6\bin\verify.dll
+0x6d320000 - 0x6d33f000 	C:\Program Files\Java\jre6\bin\java.dll
+0x6d7e0000 - 0x6d7ef000 	C:\Program Files\Java\jre6\bin\zip.dll
+0x6d000000 - 0x6d14c000 	C:\Program Files\Java\jre6\bin\awt.dll
+0x72f70000 - 0x72f96000 	C:\WINDOWS\system32\WINSPOOL.DRV
+0x77be0000 - 0x77c38000 	C:\WINDOWS\system32\msvcrt.dll
+0x76990000 - 0x76ace000 	C:\WINDOWS\system32\ole32.dll
+0x77180000 - 0x77283000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.6028_x-ww_61e65202\COMCTL32.dll
+0x77f40000 - 0x77fb6000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x5adc0000 - 0x5adf7000 	C:\WINDOWS\system32\uxtheme.dll
+0x6d230000 - 0x6d27f000 	C:\Program Files\Java\jre6\bin\fontmanager.dll
+0x6d600000 - 0x6d613000 	C:\Program Files\Java\jre6\bin\net.dll
+0x71a20000 - 0x71a37000 	C:\WINDOWS\system32\WS2_32.dll
+0x71a10000 - 0x71a18000 	C:\WINDOWS\system32\WS2HELP.dll
+0x6d620000 - 0x6d629000 	C:\Program Files\Java\jre6\bin\nio.dll
+0x03040000 - 0x030b6000 	C:\Program Files\360\360Safe\safemon\safemon.dll
+0x7d590000 - 0x7dd84000 	C:\WINDOWS\system32\SHELL32.dll
+0x770f0000 - 0x7717b000 	C:\WINDOWS\system32\OLEAUT32.dll
+0x75ff0000 - 0x76055000 	C:\WINDOWS\system32\MSVCP60.dll
+0x3e410000 - 0x3e4f6000 	C:\WINDOWS\system32\WININET.dll
+0x030c0000 - 0x030c9000 	C:\WINDOWS\system32\Normaliz.dll
+0x43ce0000 - 0x43e13000 	C:\WINDOWS\system32\urlmon.dll
+0x3eab0000 - 0x3ec9b000 	C:\WINDOWS\system32\iertutil.dll
+0x76bc0000 - 0x76bcb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x77bd0000 - 0x77bd8000 	C:\WINDOWS\system32\VERSION.dll
+0x74680000 - 0x746cc000 	C:\WINDOWS\system32\MSCTF.dll
+0x73640000 - 0x7366e000 	C:\WINDOWS\system32\msctfime.ime
+0x10000000 - 0x102f7000 	C:\WINDOWS\system32\QQPINYIN.IME
+0x76f20000 - 0x76f28000 	C:\WINDOWS\system32\WTSAPI32.dll
+0x762d0000 - 0x762e0000 	C:\WINDOWS\system32\WINSTA.dll
+0x5fdd0000 - 0x5fe25000 	C:\WINDOWS\system32\NETAPI32.dll
+0x762f0000 - 0x762f5000 	C:\WINDOWS\system32\MSIMG32.dll
+0x6d510000 - 0x6d535000 	C:\Program Files\Java\jre6\bin\jsound.dll
+0x6d540000 - 0x6d548000 	C:\Program Files\Java\jre6\bin\jsoundds.dll
+0x73e70000 - 0x73ecc000 	C:\WINDOWS\system32\DSOUND.dll
+0x76c00000 - 0x76c2e000 	C:\WINDOWS\system32\WINTRUST.dll
+0x765e0000 - 0x76673000 	C:\WINDOWS\system32\CRYPT32.dll
+0x76db0000 - 0x76dc2000 	C:\WINDOWS\system32\MSASN1.dll
+0x76c60000 - 0x76c88000 	C:\WINDOWS\system32\IMAGEHLP.dll
+0x72c90000 - 0x72c99000 	C:\WINDOWS\system32\wdmaud.drv
+0x72c80000 - 0x72c88000 	C:\WINDOWS\system32\msacm32.drv
+0x77bb0000 - 0x77bc5000 	C:\WINDOWS\system32\MSACM32.dll
+0x77ba0000 - 0x77ba7000 	C:\WINDOWS\system32\midimap.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=GBK 
+java_command: zwh.boxgame.demo.Tuixiangzi
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.6.0_21\bin
+JRE_HOME=C:\Program Files\Java\jre6
+CLASSPATH=C:\Program Files\Java\jdk1.6.0_21\bin\lib;C:\Program Files\Java\jdk1.6.0_21\bin\lib\tools.jar;C:\Program Files\Java\jdk1.6.0_21\bin\lib\dt.jar
+PATH=C:/Program Files/Java/jre6/bin/client;C:/Program Files/Java/jre6/bin;C:/Program Files/Java/jre6/lib/i386;E:\oracle\product\10.2.0\client_1\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;JAVA_JRE_HOME;E:\apache-ant-1.7.1\bin:E:\android-sdk-windows\tools;C:\Program Files\Java\jdk1.6.0_21\bin;C:\Program Files\SSH Communications Security\SSH Secure Shell;D:\eclipse;
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 13 Stepping 8, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 3
+
+CPU:total 1 (1 cores per cpu, 1 threads per core) family 6 model 13 stepping 8, cmov, cx8, fxsr, mmx, sse, sse2
+
+Memory: 4k page, physical 1178008k(108464k free), swap 2824596k(1320520k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.4-b02) for windows-x86 JRE (1.6.0_29-b11), built on Oct  3 2011 01:01:08 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Mon Mar 26 10:56:55 2012
+elapsed time: 9 seconds
+
